@@ -40,6 +40,41 @@ app.get('/', (req, res) => {
   })
 });
 
+// 列出全部 Restaurant
+app.get('/Restaurants', (req, res) => {
+  res.send('列出所有 Restaurants')
+})
+
+// 新增一筆 Restaurant 頁面
+app.get('/Restaurants/new', (req, res) => {
+  res.send('新增 Restaurant 頁面')
+})
+
+// 顯示一筆 Restaurant 的詳細內容
+app.get('/Restaurants/:id', (req, res) => {
+  res.send('顯示 Restaurant 的詳細內容')
+})
+
+// 新增一筆  Restaurant
+app.post('/Restaurants', (req, res) => {
+  res.send('建立 Restaurant')
+})
+
+// 修改 Restaurant 頁面
+app.get('/Restaurants/:id/edit', (req, res) => {
+  res.send('修改 Restaurant 頁面')
+})
+
+// 修改 Restaurant
+app.post('/Restaurants/:id', (req, res) => {
+  res.send('修改 Restaurant')
+})
+
+// 刪除 Restaurant
+app.post('/Restaurants/:id/delete', (req, res) => {
+  res.send('刪除 Restaurant')
+})
+
 // 設定 express port 3000
 app.listen(3000, () => {
   console.log('App is running')
