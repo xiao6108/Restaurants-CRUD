@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <label>搜索餐廳</label>
+    <input class="form-control" style="max-width: 16rem;">
+    <button class=" btn btn-secondary" type="submit">+ 新增</button>
+  </div>
+  <div class="row">
+    {{#each data}}
+    <!--餐廳列表-->
+    <div class="card text-white bg-dark mb-3" style="max-width: 14rem;">
+      <div>
+        <img class="card-img-top" style="height: 10rem;" src="{{this.image}}" alt="{{this.name}}">
+      </div>
+      <div class="card-header">{{this.name}}</div>
+      <div class="card-body">
+        <h5 class="card-title">{{this.category}}{{this.rating}}</h5>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+</div>
+</div>
