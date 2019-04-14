@@ -10,7 +10,6 @@ const db = mongoose.connection
 db.on('error', ()=>{
   console.log('db error')
 })
-
 db.once('open', ()=>{
   for (var i=0;i<data.length;i++){
     Restaurant.create({
