@@ -38,16 +38,27 @@ app.get('/', (req, res) => {
     if (err) return console.error(err);
     return res.render('index', { data })
   })
-});
-
-// 列出全部 Restaurant
-app.get('/Restaurants', (req, res) => {
-  res.send('列出所有 Restaurants')
 })
 
 // 新增一筆 Restaurant 頁面
 app.get('/Restaurants/new', (req, res) => {
-  res.send('新增 Restaurant 頁面')
+  Restaurants.find((err, data) => {
+    if (err) return console.error(err);
+    return res.render('new', { data })
+  })
+})
+
+app.post('/Restaurants', (req, res) => {
+  const restaurant = Restaurants(req.body)
+  restaurant.save(err => {
+    if (err) return console.error(err)
+    return res.redirect('/')
+  })
+})
+
+// 列出全部 Restaurant
+app.get('/Restaurants', (req, res) => {
+  res.send('列出所有 Restaurants')
 })
 
 // 顯示一筆 Restaurant 的詳細內容
@@ -72,7 +83,13 @@ app.post('/Restaurants/:id', (req, res) => {
 
 // 刪除 Restaurant
 app.post('/Restaurants/:id/delete', (req, res) => {
-  res.send('刪除 Restaurant')
+  Restaurants.findById(req.params.id, (err, restaurant) => {
+    if (err) return console.error(err)
+    restaurant.remove(err => {
+      if (err) return console.error(err)
+      return res.redirect('/')
+    })
+  })
 })
 
 // 設定 express port 3000

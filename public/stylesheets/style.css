@@ -8,9 +8,25 @@ body {
   padding: 10px 20px;
 }
 
-.col_edit {
-  height: 100vh;
-  overflow-y: scroll;
+.form-control {
+  margin: 10px;
+  max-width: 25rem;
+}
+
+.cross {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: white;
+  background-color: rgba(163, 163, 163, 0.3);
+  outline: none;
+  border-radius: 50%;
+}
+.cross:hover {
+  background-color: gray;
+  color: white;
 }
 
 .card {
