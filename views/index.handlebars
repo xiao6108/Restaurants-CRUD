@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <a class="btn btn-secondary" href="/Restaurants/new">新增餐廳 +</a>
+    <a class="btn btn-secondary" style="margin-left: 15px" href="/Restaurants/new">新增餐廳 +</a>
   </div>
   <div class="row">
     {{#each data}}
@@ -14,8 +14,10 @@
       </div>
       <div class="card-header">{{this.name}}</div>
       <div class="card-body">
-        <h5 class="card-title">{{this.category}}</h5>
-        <p>{{this.rating}}</p>
+        <h6 class="card-title">{{this.category}}
+          <span class="block"><i class="fas fa-star fa-xs"></i> {{this.rating}}</span>
+          <a href="/Restaurants/{{this.id}}/edit" class="block">修改</a>
+        </h6>
       </div>
     </div>
     {{/each}}

@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .form-control {
@@ -21,7 +21,6 @@ body {
   transition: 0.5s;
   color: white;
   background-color: rgba(163, 163, 163, 0.3);
-  outline: none;
   border-radius: 50%;
 }
 .cross:hover {
@@ -31,4 +30,28 @@ body {
 
 .card {
   margin: 10px;
+  box-shadow: 0px 0px 5px 0px black;
+  transition: 2s;
+}
+.card:hover {
+  bottom: 5px;
+}
+
+a {
+  color: white;
+}
+.block {
+  font-size: 11px;
+  width: 20px;
+  height: 10px;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-left: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.block:hover {
+  background-color: gray;
+  color: white;
 }
