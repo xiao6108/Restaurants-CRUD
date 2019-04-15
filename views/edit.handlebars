@@ -1,6 +1,6 @@
 <div class="jumbotron" style="background-color: #343A40; color: white">
   <div class="container-fluid">
-    <form action="/Restaurants/{{{data._id}}}" method="POST" class="font-weight-light">
+    <form action="/Restaurants/{{data.id}}/" method="POST" class="font-weight-light">
       <div class="form-group row">
         <h1>你正在修改{{ data.name }}</h1>
       </div>
@@ -50,7 +50,7 @@
       <div class="form-group row">
         <label for="name" class="col-form-label">Google Map</label>
         <div class="col-sm-4">
-          <input type="number" name="rating" class="form-control" id="rating" value="{{{data.google_map}}}">
+          <input type="number" name="google_map" class="form-control" id="google_map" value="{{{data.google_map}}}">
         </div>
       </div>
       <!--餐廳簡述-->

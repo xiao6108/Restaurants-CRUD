@@ -49,13 +49,11 @@ app.get('/Restaurants/new', (req, res) => {
 })
 // 新增一筆  Restaurant
 app.post('/Restaurants', (req, res) => {
-  Restaurants.findById(req.params.id, (err, restaurant) => {
+  const restaurant = Restaurants(req.body)
+
+  restaurant.save(err => {
     if (err) return console.error(err)
-    restaurant = Restaurants(req.body)
-    restaurant.save(err => {
-    if (err) return console.log(err)
     return res.redirect('/')
-  })
   })
 })
 
@@ -76,14 +74,15 @@ app.get('/Restaurants/:id/edit', (req, res) => {
 })
 
 // 修改 Restaurant
-app.post('/Restaurants/:id', (req, res) => {
+app.post('/Restaurants/:id/', (req, res) => {
   Restaurants.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
-    restaurant = Restaurants(req.body)
+    Object.assign(restaurant, req.body)
+
     restaurant.save(err => {
-    if (err) return console.log(err)
-    return res.redirect(`/Restaurants/${restaurant.id}`)
-  })
+      if (err) return console.error(err)
+      return res.redirect('/')
+    })
   })
 })
 
