@@ -9,7 +9,9 @@
       <div>
         <form action="/Restaurants/{{this._id}}/delete" method="POST">
           <button type="submit" class="cross">✗</button>
-          <img class="card-img-top" style="height: 10rem;" src="{{this.image}}" alt="{{this.name}}">
+          <a href="/Restaurants/{{this.id}}">
+            <img class="card-img-top" style="height: 10rem;" src="{{this.image}}" alt="{{this.name}}">
+          </a>
         </form>
       </div>
       <div class="card-header">{{this.name}}</div>

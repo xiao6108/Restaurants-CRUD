@@ -1,0 +1,17 @@
+<div class="jumbotron" style="background-color: #343A40; color: white">
+  <img class="card-img-top" style="height: 30rem;" src="{{data.image}}" alt="{{data.name}}">
+  <h1 class="display-4">{{ data.name }}</h1>
+  <h6 class="card-title">{{data.category}}
+    <span class="block"><i class="fas fa-star fa-xs"></i> {{data.rating}}</span>
+    <a href="/Restaurants/{{data.id}}/edit" class="block">修改</a>
+  </h6>
+  <a href="{{ data.google_map }}">
+    <p class="lead">{{ data.location }}</p>
+  </a>
+  <p>{{ data.phone }}</p>
+  <hr class="my-4">
+  <p>{{ data.description }}</p>
+  <p class="lead">
+    <a class="btn btn-secondary" href="/">〈 返回選單</a>
+  </p>
+</div>

@@ -47,38 +47,44 @@ app.get('/Restaurants/new', (req, res) => {
     return res.render('new', { data })
   })
 })
-
+// 新增一筆  Restaurant
 app.post('/Restaurants', (req, res) => {
-  const restaurant = Restaurants(req.body)
-  restaurant.save(err => {
+  Restaurants.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
+    restaurant = Restaurants(req.body)
+    restaurant.save(err => {
+    if (err) return console.log(err)
     return res.redirect('/')
   })
-})
-
-// 列出全部 Restaurant
-app.get('/Restaurants', (req, res) => {
-  res.send('列出所有 Restaurants')
+  })
 })
 
 // 顯示一筆 Restaurant 的詳細內容
 app.get('/Restaurants/:id', (req, res) => {
-  res.send('顯示 Restaurant 的詳細內容')
-})
-
-// 新增一筆  Restaurant
-app.post('/Restaurants', (req, res) => {
-  res.send('建立 Restaurant')
+  Restaurants.findById(req.params.id, (err, data) => {
+    if (err) return console.log(err)
+    return res.render('show', {data})
+  })
 })
 
 // 修改 Restaurant 頁面
 app.get('/Restaurants/:id/edit', (req, res) => {
-  res.send('修改 Restaurant 頁面')
+  Restaurants.findById(req.params.id, (err, data) => {
+    if (err) return console.log(err)
+    return res.render('edit', {data})
+  })
 })
 
 // 修改 Restaurant
 app.post('/Restaurants/:id', (req, res) => {
-  res.send('修改 Restaurant')
+  Restaurants.findById(req.params.id, (err, restaurant) => {
+    if (err) return console.error(err)
+    restaurant = Restaurants(req.body)
+    restaurant.save(err => {
+    if (err) return console.log(err)
+    return res.redirect(`/Restaurants/${restaurant.id}`)
+  })
+  })
 })
 
 // 刪除 Restaurant
