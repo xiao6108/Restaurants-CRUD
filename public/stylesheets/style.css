@@ -2,7 +2,7 @@ html, body {
   padding: 0;
   margin: 0;
   overflow-y: scroll;
-  background-color: #f2f4f7;
+  background-color: #343a40;
 }
 
 body {
@@ -20,18 +20,19 @@ body {
   top: 10px;
   cursor: pointer;
   transition: 0.5s;
-  color: white;
+  color: #f2f4f7;
   background-color: rgba(163, 163, 163, 0.3);
   border-radius: 50%;
 }
 .cross:hover {
-  background-color: gray;
-  color: white;
+  background-color: #f2f4f7;
+  color: #404142;
 }
 
 .card {
   margin: 10px;
   transition: s;
+  color: #404142;
 }
 .card:hover {
   bottom: 5px;
@@ -39,13 +40,13 @@ body {
 }
 
 a {
-  color: white;
+  color: #404142;
 }
 .block {
   font-size: 11px;
   width: 20px;
   height: 10px;
-  border: 1px solid white;
+  border: 1px solid #404142;
   padding: 5px 10px;
   border-radius: 15px;
   margin-left: 5px;
@@ -54,7 +55,7 @@ a {
 }
 .block:hover {
   background-color: gray;
-  color: white;
+  color: #f2f4f7;
 }
 
 .mdb-select {

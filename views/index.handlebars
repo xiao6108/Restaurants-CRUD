@@ -1,7 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-    <a class="btn btn-secondary" style="margin-left: 15px" href="/Restaurants/new">新增餐廳 +</a>
-    <select class="mdb-select md-form" name="form" onchange="location = this.value;">
+    <a class="btn btn-secondary" style="background-color: #343a40; color: #f2f4f7" style="margin-left: 15px" href="/Restaurants/new">新增餐廳
+      +</a>
+    <select class="mdb-select md-form" name="form" style="background-color: #343a40; color: #f2f4f7" onchange="location = this.value;">
       <option value="" disabled selected>選擇排序</option>
       <option value="/sort/atoz">A-Z</option>
       <option value="/sort/ztoa">Z-A</option>
@@ -9,10 +10,11 @@
       <option value="/sort/category">分類</option>
     </select>
   </div>
+  <hr>
   <div class="row">
     {{#each data}}
     <!--餐廳列表-->
-    <div class="card text-white bg-dark mb-3" style="max-width: 14rem;">
+    <div class="card bg-light mb-3" style="max-width: 14rem;">
       <div>
         <form action="/Restaurants/{{this._id}}/delete?_method=DELETE" method="POST">
           <button type="submit" class="cross">✗</button>

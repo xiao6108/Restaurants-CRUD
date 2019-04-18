@@ -1,12 +1,13 @@
-<div class="jumbotron" style="background-color: #343A40; color: white">
+<div class="jumbotron" style="background-color: #343a40; color: #f2f4f7">
   <img class="card-img-top" style="height: 30rem;" src="{{data.image}}" alt="{{data.name}}">
   <h1 class="display-4">{{ data.name }}</h1>
   <h6 class="card-title">{{data.category}}
-    <span class="block"><i class="fas fa-star fa-xs"></i> {{data.rating}}</span>
-    <a href="/Restaurants/{{data.id}}/edit" class="block">修改</a>
+    <span class="block" style="background-color: #f2f4f7;color: #343a40"><i class="fas fa-star fa-xs"></i>
+      {{data.rating}}</span>
+    <a href="/Restaurants/{{data.id}}/edit" class="block" style="background-color: #f2f4f7">修改</a>
   </h6>
   <a href="{{ data.google_map }}">
-    <p class="lead">{{ data.location }}</p>
+    <p class="lead" style="color: #f2f4f7">{{ data.location }}</p>
   </a>
   <p>{{ data.phone }}</p>
   <hr class="my-4">
