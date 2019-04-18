@@ -36,7 +36,7 @@ body {
 }
 .card:hover {
   bottom: 5px;
-  box-shadow: 0px 10px 5px 0px rgba(94, 94, 94, 0.4);
+  box-shadow: 0px 10px 5px 0px rgba(41, 41, 41, 0.856);
 }
 
 a {
