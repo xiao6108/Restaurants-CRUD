@@ -14,6 +14,8 @@
 
 - 點擊 `Ｘ` 可移除一家餐廳
 
+- 點擊 `選擇排序` 可依照地區、分類、字母排序
+
 ## Installing
 
 如何下載並啟動專案
@@ -34,11 +36,12 @@ npm i mongoose
 ```
 
 ## Runing Sample
-![](https://i.imgur.com/52LpeUc.jpg)
+![](https://i.imgur.com/WbnABQq.jpg)
 -
-![](https://i.imgur.com/vaP8eFc.jpg)
+![](https://i.imgur.com/ruFeT7O.jpg)
 -
-![](https://i.imgur.com/wOEYw0a.png)
+![](https://i.imgur.com/5Snz8gE.png)
+-
 
 
 ## Authors
