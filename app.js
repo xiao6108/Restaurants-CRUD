@@ -8,9 +8,14 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 // 載入 mongoose
 const mongoose = require('mongoose')
-// 設定連線到 mongoDB
-// 加上 { useNewUrlParser: true }
+// 引用 method-override
+const methodOverride = require('method-override')
+
+// 設定連線到 mongoDB 加上 { useNewUrlParser: true }
 mongoose.connect('mongodb://localhost/restaurant', { useNewUrlParser: true })
+// 設定 method-override
+app.use(methodOverride('_method'))
+
 
 // mongoose連線後拿到 Connection 的物件
 const db = mongoose.connection
@@ -32,70 +37,8 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// 列出全部 restaurant 頁面
-app.get('/', (req, res) => {
-  Restaurants.find((err, data) => {
-    if (err) return console.error(err);
-    return res.render('index', { data })
-  })
-})
-
-// 新增一筆 Restaurant 頁面
-app.get('/Restaurants/new', (req, res) => {
-  Restaurants.find((err, data) => {
-    if (err) return console.error(err);
-    return res.render('new', { data })
-  })
-})
-// 新增一筆  Restaurant
-app.post('/Restaurants', (req, res) => {
-  const restaurant = Restaurants(req.body)
-
-  restaurant.save(err => {
-    if (err) return console.error(err)
-    return res.redirect('/')
-  })
-})
-
-// 顯示一筆 Restaurant 的詳細內容
-app.get('/Restaurants/:id', (req, res) => {
-  Restaurants.findById(req.params.id, (err, data) => {
-    if (err) return console.log(err)
-    return res.render('show', {data})
-  })
-})
-
-// 修改 Restaurant 頁面
-app.get('/Restaurants/:id/edit', (req, res) => {
-  Restaurants.findById(req.params.id, (err, data) => {
-    if (err) return console.log(err)
-    return res.render('edit', {data})
-  })
-})
-
-// 修改 Restaurant
-app.post('/Restaurants/:id/', (req, res) => {
-  Restaurants.findById(req.params.id, (err, restaurant) => {
-    if (err) return console.error(err)
-    Object.assign(restaurant, req.body)
-
-    restaurant.save(err => {
-      if (err) return console.error(err)
-      return res.redirect('/')
-    })
-  })
-})
-
-// 刪除 Restaurant
-app.post('/Restaurants/:id/delete', (req, res) => {
-  Restaurants.findById(req.params.id, (err, restaurant) => {
-    if (err) return console.error(err)
-    restaurant.remove(err => {
-      if (err) return console.error(err)
-      return res.redirect('/')
-    })
-  })
-})
+app.use('/', require('./routes/home'))
+app.use('/restaurants', require('./routes/restaurants'))
 
 // 設定 express port 3000
 app.listen(3000, () => {

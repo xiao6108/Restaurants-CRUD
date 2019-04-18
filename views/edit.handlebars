@@ -1,6 +1,6 @@
 <div class="jumbotron" style="background-color: #343A40; color: white">
   <div class="container-fluid">
-    <form action="/Restaurants/{{data.id}}/" method="POST" class="font-weight-light">
+    <form action="/Restaurants/{{data.id}}?_method=PUT" method="POST" class="font-weight-light">
       <div class="form-group row">
         <h1>你正在修改{{ data.name }}</h1>
       </div>
@@ -57,8 +57,7 @@
       <div class="form-group row">
         <label for="name" class="col-form-label">餐廳簡述</label>
         <div class="col-sm-4">
-          <textarea name="description" id="description" cols="42" rows="4"
-            style="margin-left: 10px">{{{data.description}}}</textarea>
+          <textarea name="description" id="description" cols="42" rows="4" style="margin-left: 10px">{{{data.description}}}</textarea>
         </div>
       </div>
       <div class="col-sm-10">

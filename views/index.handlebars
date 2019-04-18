@@ -7,7 +7,7 @@
     <!--餐廳列表-->
     <div class="card text-white bg-dark mb-3" style="max-width: 14rem;">
       <div>
-        <form action="/Restaurants/{{this._id}}/delete" method="POST">
+        <form action="/Restaurants/{{this._id}}/delete?_method=DELETE" method="POST">
           <button type="submit" class="cross">✗</button>
           <a href="/Restaurants/{{this.id}}">
             <img class="card-img-top" style="height: 10rem;" src="{{this.image}}" alt="{{this.name}}">
