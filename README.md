@@ -36,11 +36,11 @@ npm i mongoose
 ```
 
 ## Runing Sample
-![](https://i.imgur.com/WbnABQq.jpg)
+![](https://i.imgur.com/Q6bZnH7.jpg)
 -
-![](https://i.imgur.com/ruFeT7O.jpg)
+![](https://i.imgur.com/LCG6BQl.png)
 -
-![](https://i.imgur.com/5Snz8gE.png)
+![](https://i.imgur.com/V3CfCwN.png)
 -
 
 
