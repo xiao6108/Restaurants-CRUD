@@ -1,6 +1,13 @@
 <div class="container-fluid">
   <div class="row">
     <a class="btn btn-secondary" style="margin-left: 15px" href="/Restaurants/new">新增餐廳 +</a>
+    <select class="mdb-select md-form" name="form" onchange="location = this.value;">
+      <option value="" disabled selected>選擇排序</option>
+      <option value="/sort/atoz">A-Z</option>
+      <option value="/sort/ztoa">Z-A</option>
+      <option value="/sort/location">地區</option>
+      <option value="/sort/category">分類</option>
+    </select>
   </div>
   <div class="row">
     {{#each data}}

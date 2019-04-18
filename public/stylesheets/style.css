@@ -2,6 +2,7 @@ html, body {
   padding: 0;
   margin: 0;
   overflow-y: scroll;
+  background-color: #f2f4f7;
 }
 
 body {
@@ -54,4 +55,8 @@ a {
 .block:hover {
   background-color: gray;
   color: white;
+}
+
+.mdb-select {
+  margin-left: 10px;
 }

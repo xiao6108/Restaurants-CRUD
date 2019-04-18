@@ -39,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/', require('./routes/home'))
 app.use('/restaurants', require('./routes/restaurants'))
+app.use('/sort', require('./routes/sort'))
 
 // 設定 express port 3000
 app.listen(3000, () => {
