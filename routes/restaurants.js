@@ -12,6 +12,7 @@ router.get('/new', (req, res) => {
 // 新增一筆  Restaurant
 router.post('', (req, res) => {
   const restaurant = Restaurants(req.body)
+
   restaurant.save(err => {
     if (err) return console.error(err)
     return res.redirect('/')
@@ -39,6 +40,7 @@ router.put('/:id/', (req, res) => {
   Restaurants.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
     Object.assign(restaurant, req.body)
+
     restaurant.save(err => {
       if (err) return console.error(err)
       return res.redirect('/')

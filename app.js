@@ -12,7 +12,11 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
 // 設定連線到 mongoDB 加上 { useNewUrlParser: true }
-mongoose.connect('mongodb://localhost/restaurant', { useNewUrlParser: true })
+// mongoose.connect('mongodb://localhost/restaurant', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/restaurant', {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+})
 // 設定 method-override
 app.use(methodOverride('_method'))
 
@@ -42,6 +46,10 @@ app.use('/restaurants', require('./routes/restaurants'))
 app.use('/sort', require('./routes/sort'))
 
 // 設定 express port 3000
-app.listen(3000, () => {
+// app.listen(3000, () => {
+//   console.log('App is running')
+// })
+
+app.listen(process.env.PORT || 3000, () => {
   console.log('App is running')
 })
